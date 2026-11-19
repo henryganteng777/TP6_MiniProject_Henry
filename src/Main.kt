@@ -10,10 +10,14 @@ fun main() {
 
     val pilihan = readLine()
 
+    if (pilihan == null || pilihan !in listOf("1", "2", "3")) {
+        println("Pilihan tidak valid! Silakan pilih 1, 2, atau 3.")
+        return
+    }
+
     when (pilihan) {
         "1" -> println("Menampilkan daftar tugas...")
         "2" -> println("Menu tambah tugas...")
         "3" -> println("Terima kasih!")
-        else -> println("Pilihan tidak valid!")
     }
 }
