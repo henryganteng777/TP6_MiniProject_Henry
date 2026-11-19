@@ -11,12 +11,14 @@ fun main() {
         println("2. Lihat daftar tugas")
         println("3. Cari tugas")
         println("4. Ubah status tugas")
-        println("5. Simpan data")
+        println("5. Hapus tugas")
+        println("6. Simpan data")
         println("0. Keluar")
         println("================================")
         print("Pilih menu: ")
 
         when (readLine()?.trim()) {
+
             "1" -> {
                 print("Masukkan ID tugas: ")
                 val id = readLine() ?: ""
@@ -63,6 +65,17 @@ fun main() {
             }
 
             "5" -> {
+                print("Masukkan ID tugas yang ingin dihapus: ")
+                val id = readLine() ?: ""
+
+                if (service.hapus(id)) {
+                    println("Tugas berhasil dihapus!")
+                } else {
+                    println("Tugas tidak ditemukan!")
+                }
+            }
+
+            "6" -> {
                 penyimpanan.simpan(daftarTugas)
             }
 
